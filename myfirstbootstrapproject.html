@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyFirstResponsiveWebsite</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="myfirstbootstrap.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .colors{
+            color: black;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        /* *******************************Header section css********************************** */
+        .header {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 168, 255, 0.1), rgba(0, 168, 255, 0.1)), url('https://www.crestinfotech.com/wp-content/uploads/2019/01/portfolio-background.jpg');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .header:before {
+            content: "";
+            position: absolute;
+            top: 0%;
+            bottom: 0%;
+            left: 0;
+            right: 0;
+            opacity: 0.4;
+            z-index: -1;
+            background: linear-gradient(to right, #00f549 0%, #00f800 0%, #2d00f3 100%);
+        }
+
+        /* **********************************NavBar Css******************************************* */
+
+        .navbar:before {
+            content: "";
+            position: absolute;
+            top: 0%;
+            bottom: 0%;
+            left: 0;
+            right: 0;
+            opacity: 0.3;
+            z-index: -1;
+            background: linear-gradient(to right, #991e70 0%, #00f800 0%, #2d00f3 100%);
+        }
+
+        .nav-item a,
+        navbar {
+            color:aqua;
+            font-weight: bold;
+
+        }
+
+        /* **********************************************Middle Portion Css(Kirshna Itolution)************* */
+        .center-div {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            color: white;
+            text-align: center;
+            top: 50%;
+
+
+        }
+
+        .extra-div {
+            width: 100%;
+            height: auto;
+            margin: auto;
+            text-align: center;
+        }
+
+        .extra-div2:hover {
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+            transform: translateY(-20px);
+        }
+
+        .extra-div2 {
+            background: white;
+            border: medium none;
+            border-radius: 3px;
+            transition: 0.3s;
+
+        }
+
+        /* ********************************our services section css*********************************** */
+        .service {
+            background: rgba(228 217 217 / 20%);
+            padding: 50px 0;
+
+            margin-bottom: 50px;
+        }
+
+        .serviceitems {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        i {
+            color: lightseagreen;
+        }
+
+        /* ******************************our pricing css************************************** */
+
+        .our-pricing {
+            width: 100%;
+            height: auto;
+            position: relative;
+
+
+        }
+
+        .pricing-div {
+
+            align-content: space-around;
+
+        }
+
+        .our-pricing:before {
+            content: "";
+            position: absolute;
+            top: 0%;
+            bottom: 0%;
+            left: 0;
+            right: 0;
+            opacity: 0.3;
+            z-index: -1;
+            background: linear-gradient(to right, #0714ffab 0%, #26f800d6 0%, #00f3a400 100%);
+        }
+
+        /* **************************************Form Css***************************************** */
+        .myform {
+            width: 100%;
+            height: auto;
+            padding: 80px;
+            position: relative;
+        }
+
+        .myform:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+
+            opacity: 0.4;
+
+            background: lightgoldenrodyellow;
+
+        }
+
+        .button {
+            border-radius: 25px 25px 25px 25px;
+        }
+
+        .button:hover {
+            background: white;
+            color: black;
+        }
+
+        ::placeholder {
+            font-size: 0.85rem;
+        }
+
+        /* ********************************newsletter CSS************************** */
+        .newsletter {
+            width: 100%;
+            height: auto;
+            margin: 20px auto;
+        }
+
+        .newsinput {
+            border-radius: 100px 100px 100px 100px;
+            min-width: 170px;
+        }
+
+        /* *************************************FOOTER SECTION CSS***************************** */
+        .footer-section {
+            width: 100%;
+            height: auto;
+            padding: 70px 0 20px 0;
+            position: relative;
+            background: aqua;
+        }
+
+        .footer-section p {
+            color: black;
+
+        }
+
+        .footer-section li a {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            font-weight: bold;
+            color: black;
+            text-transform: uppercase;
+
+
+        }
+ 
+        /* **********************************NAVBAR toggler button visibility*************************** */
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+
+    <!-- ***************************************header section****************************** -->
+    <div class="header" id="toheader">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container text-uppercase p-2">
+                <a class=" logo navbar-brand font-weight-bold text-white href=" #">Krishna IT Solutions</a>
+                <button class="navbar-toggler background-grey" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto text-uppercase text-center colors">
+                        <li class="nav-item active">
+                            <a class="nav-link text-black" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Careers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="scrollWin(0, 100)">Contact Us</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- **********************(KRISHNA IT SOLUTIONS)******************************** -->
+        <section class="header-section">
+            <div class="center-div">
+                <h1 class="font-weight-bold">Welcome to Krishna IT Solutions</h1>
+                <p>We Provides Software Solution To Your Problems.</p>
+                <div class="header-buttons ">
+                    <a href="" class="btn btn-secondary btn-sm p-2 m-2  btn-outline-light">About US</a>
+                    <a href="" class="btn btn-secondary btn-sm p-2 m 2  btn-outline-light">Contact US</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- *******************************HEADER PART END************************************* -->
+
+    <!-- **************************(GLOBAL PART)**************************************** -->
+    <section class="extra-div">
+        <div class="container p-5 ">
+            <div class="row">
+                <div class="extra-div2 col-lg-4 col-md-4 col-12 ">
+                    <a href="#"><i class="fa-3x fa fa-globe align-middle p-2" aria-hidden="true"></i></a>
+                    <h2 class="justify-center">18</h2>
+                    <p>Gloabal Locations</p>
+                </div>
+
+                <div class="extra-div2 col-lg-4 col-md-4 col-12">
+                    <a href="#"><i class="fa-3x fa fa-users p-2" aria-hidden="true"></i></a>
+                    <h2>8000+</h2>
+                    <p>Team Members Globally</p>
+                </div>
+
+                <div class="extra-div2 col-lg-4 col-md-4 col-12">
+                    <a href="#"><i class="fa-3x fa fa-superpowers p-2" aria-hidden="true"></i></a>
+                    <h2>Power of 3</h2>
+                    <p>Digital,Consulting & Technology</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- **************************What we offer Div Start**************************************** -->
+    <section class="service" id="serviceid">
+
+        <div class="container p-2">
+            <h1 class="text-center font-weight-bold">What We Offer</h1>
+        </div>
+
+        <div class="container servicesbox">
+            <div class="row">
+                <div class="col-lg-6 col-10 offset-1 offset-lg-0">
+
+                    <div class="my-1">
+                        <h2>Web Developement</h2>
+                        <div class="progress w-75" style="height: 1.5rem;">
+                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar"
+                                style="width: 100%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">100%</div>
+                        </div>
+                    </div>
+
+                    <div class="my-1">
+                        <h2>Software Developement</h2>
+                        <div class="progress w-75" style="height: 1.5rem;">
+                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar"
+                                style="width: 100%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">100%</div>
+                        </div>
+                    </div>
+
+                    <div class="my-1">
+                        <h2>Android Developement</h2>
+                        <div class="progress w-75" style="height:1.5rem">
+                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar"
+                                style="width: 90%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">90</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 col-12 my-3">
+                    <div class="row">
+
+
+                        <div class="col-lg-2 col-3 serviceitems">
+                            <i class="fa-2x fa fa-desktop" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-lg-10 col-9">
+                            <h3>Web Developement</h3>
+                            <p>We're innovators, designers, developers and strategists.</p>
+                        </div>
+
+                        <div class="col-lg-2 col-3 serviceitems">
+                            <i class=" fa-2x fa fa-code" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-lg-10 col-9 ">
+                            <h3>Software Developement</h3>
+                            <p>We're innovators, designers, developers and strategists.</p>
+                        </div>
+
+                        <div class="col-lg-2 col-3 serviceitems">
+                            <i class="fa-2x  fa fa-android" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-lg-10 col-9 ">
+                            <h3>Android App Developement</h3>
+                            <p>We're innovators, designers, developers and strategists.</p>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ************************************ Project_work start************************************** -->
+    <section class="project-work my-2">
+        <h3 class="text-center">Our Progress</h3>
+        <div class="container d-flex flex-row justify-content-between">
+            <div class="ml-1">
+                <h3 class="text-center">1500+</h3>
+                <p>Websites Developed</p>
+            </div>
+
+            <div class="ml-1">
+                <h3 class="text-center count">1000+</h3>
+                <p>Our Clients</p>
+            </div>
+
+            <div class="ml-1">
+                <h3 class="text-center count">4.5</h3>
+                <p>Better Bussiness Bureau</p>
+            </div>
+
+            <div class="ml-1">
+                <h2>200+</h2>
+                <p>Awards</p>
+            </div>
+
+        </div>
+    </section>
+
+<!-- ***********************************OUR PRICING************************* -->
+    <section class="our-pricing my-2">
+        <div class="container">
+            <h3 class="text-center p-2">Our Pricing</h3>
+        </div>
+        <div class="container   p-2">
+            <div class="row">
+
+                <div class="col-lg-3 col-md-3 col-10 pricing-div offset-1">
+                    <div class="card ">
+                        <div class="card-header  text-center">StandAlone Applications</div>
+                        <div class="card-body text-center">
+                            <ul>
+                                <li>Easy To Use</li>
+                                <li>Free Installation</li>
+                                <li>24*7 Support</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="#" class="btn btn-primary btn-sm">Purchase</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-10 pricing-div offset-1 ">
+                    <div class="card  my-2">
+                        <div class="card-header  text-center">Web Based Applications</div>
+                        <div class="card-body text-center">
+                            <ul>
+                                <li>Easy To Use</li>
+                                <li>Free Installation</li>
+                                <li>24*7 Support</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer text-center ">
+                            <a href="#" class="btn btn-primary btn-sm">Purchase</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-10 pricing-div offset-1 ">
+                    <div class="card  my-2">
+                        <div class="card-header  text-center">Android Applications</div>
+                        <div class="card-body text-center">
+                            <ul>
+                                <li>Easy To Use</li>
+                                <li>Free Installation</li>
+                                <li>24*7 Support</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer text-center ">
+                            <a href="#" class="btn btn-primary btn-sm">Purchase</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+<!-- ***************************FORM*********************************** -->
+    <section class="myform">
+        <div class="container">
+            <h3 class="text-center p-2 text-black">Contat Us</h3>
+        </div>
+
+
+        <section class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-12 offset-lg-2 offset-md-2">
+
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control input" id="exampleInputPassword1" required
+                                autocomplete="off" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control input" id="exampleInputEmail1" required
+                                autocomplete="off" aria-describedby="emailHelp" placeholder="Enter Your email">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control input" id="exampleInputEmail1" required
+                                autocomplete="off" aria-describedby="emailHelp" placeholder="Enter Your Mobile number">
+                        </div>
+                        <div class="d-flex  justify-content-center">
+                            <button type="submit" class="button btn btn-primary">Submit</button>
+                        </div>
+
+
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    </section>
+
+<!-- ******************************NEWSLETTER************************************** -->
+    <section class="newsletter">
+        <div class="container">
+            <h1 class="text-center p-2">Subscribe To Our NewsLetter</h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-12">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control newsinput" placeholder="Your Email">
+                        <div class="input-group-append">
+                            <span class="input-group-text">Subscribe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- **************************************FOOTER SECTION**************************** -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-10 col-1 footer-div text-center">
+                    <div>
+                        <h3>About Krishna IT Solutions</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur, voluptatibus debitis.
+                            Dolor itaque, corrupti iusto impedit quibusdam eius porro facere consequatur quae esse non
+                            reprehenderit.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-10 col-1 footer-div text-center">
+                    <div>
+                        <h3>Navigation Links</h3>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-10 col-1 footer-div text-center">
+                    <div>
+                        <h3>NewsLetter</h3>
+                        <p class="text-align-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            Pariatur, voluptatibus debitis. Dolor itaque, corrupti iusto impedit quibusdam eius porro
+                            facere consequatur quae esse non reprehenderit.</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="container">
+                <div class="d-flex justify-content-center mt-5">
+                    <p>Copyright 1999-2020 by Refsnes Data. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="bootstrap.js"></script>
+
+</body>
+
+</html>
